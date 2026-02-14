@@ -15,6 +15,25 @@
 - `bun`（可通过 `npx -y bun` 自动拉起）
 - DeepSeek API Key（通过环境变量 `DEEPSEEK_API_KEY` 提供）
 
+## 快速开始（一键脚本）
+
+最简单的方式是使用 `daily-digest.sh` 一键运行脚本：
+
+1) 首次使用需要通过 OpenCode 配置：
+   - 运行 `opencode`
+   - 在 OpenCode 中输入 `/digest`
+   - 完成配置后会自动保存到 `~/.hn-daily-digest/config.json`
+
+2) 后续直接运行：
+
+```bash
+./daily-digest.sh
+```
+
+脚本会自动读取配置并生成报告，报告保存在 `./output/` 目录下，同时会在终端高亮显示。
+
+---
+
 ## 快速开始（直接运行脚本）
 
 1) 设置环境变量：
@@ -41,6 +60,21 @@ npx -y bun ./.opencode/skills/ai-daily-digest/scripts/digest.ts \
 - `--top-n <n>`：最终保留 n 篇（默认 15）
 - `--lang <zh|en>`：输出语言（默认 zh）
 - `--output <path>`：输出文件路径（默认 `./digest-YYYYMMDD.md`）
+
+## 终端显示优化
+
+脚本会自动检测并使用以下工具美化 Markdown 显示：
+
+- **优先**：`bat` - 支持语法高亮、行号、Git 差异（推荐！）
+- **备选**：`glow` - 专门的终端 Markdown 渲染器
+- **回退**：`cat` - 普通文本显示
+
+安装推荐工具：
+
+```bash
+# macOS 使用 Homebrew
+brew install glow  # 更好的 Markdown 渲染体验
+```
 
 ## OpenCode 用法（Skill）
 
