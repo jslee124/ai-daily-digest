@@ -103,10 +103,10 @@ else
 fi
 
 # 显示生成的摘要
-if command -v bat &> /dev/null; then
-  bat --style="full" --language=md "$OUTPUT_FILE"
-elif command -v glow &> /dev/null; then
+if command -v glow &> /dev/null; then
   glow "$OUTPUT_FILE"
+elif command -v bat &> /dev/null; then
+  bat --style="full" --language=md "$OUTPUT_FILE"
 else
   cat "$OUTPUT_FILE"
 fi
