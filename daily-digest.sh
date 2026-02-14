@@ -5,7 +5,14 @@
 
 set -e
 
-SKILL_DIR="/Users/mori/codes/ai-daily/.opencode/skills/ai-daily-digest"
+# 优先从环境变量读取 skill 目录，否则使用脚本所在目录
+if [ -n "$AI_DAILY_DIGEST_HOME" ]; then
+    SKILL_DIR="$AI_DAILY_DIGEST_HOME/.opencode/skills/ai-daily-digest"
+else
+    # 获取脚本所在目录的绝对路径
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    SKILL_DIR="$SCRIPT_DIR/.opencode/skills/ai-daily-digest"
+fi
 CONFIG_FILE="$HOME/.hn-daily-digest/config.json"
 OUTPUT_DIR="./output"
 
