@@ -1,0 +1,60 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+log/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Build outputs
+dist/
+build/
+out/
+output/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# Test coverage
+coverage/
+.nyc_output/
+htmlcov/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
