@@ -58,3 +58,6 @@ htmlcov/
 *.pid
 *.seed
 *.pid.lock
+
+# AI agent specific
+.claude/
